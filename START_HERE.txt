@@ -1,0 +1,109 @@
+================================================================================
+  CAMERA DETECTION WITH AI - PRODUCTION READY v2.0
+================================================================================
+
+Welcome to your clean, production-ready camera detection system!
+
+This system uses pixel-based motion detection and Anthropic Claude AI to
+monitor your security camera and identify people, vehicles, and animals.
+
+--------------------------------------------------------------------------------
+  QUICK START
+--------------------------------------------------------------------------------
+
+1. READ THIS FIRST:
+   → Open README.md for complete overview
+
+2. DEPLOY TO HOME ASSISTANT:
+   → Follow DEPLOYMENT_GUIDE.md step-by-step
+
+3. IF YOU HAVE ISSUES:
+   → Check docs/TROUBLESHOOTING.md
+
+--------------------------------------------------------------------------------
+  WHAT'S IN THIS DIRECTORY
+--------------------------------------------------------------------------------
+
+📖 Documentation:
+   README.md                 - Main user guide
+   DEPLOYMENT_GUIDE.md       - Step-by-step setup
+   PROJECT_SUMMARY.md        - Complete project overview
+   CHANGELOG.md              - Version history
+   INDEX.md                  - File navigation guide
+
+🚀 Production Files (deploy these):
+   deployment/
+   ├── camera_detection_pixel.py    ← Deploy to Home Assistant
+   ├── camera_detection_scheduled.py (legacy, for reference)
+   └── apps.yaml                     ← Configure and deploy
+
+📚 Detailed Guides:
+   docs/
+   ├── PRODUCTION_READY.md
+   ├── PIXEL_MOTION_DETECTION_UPGRADE.md
+   └── TROUBLESHOOTING.md
+
+--------------------------------------------------------------------------------
+  CURRENT STATUS
+--------------------------------------------------------------------------------
+
+✅ System: Production Ready
+✅ Version: 2.0 (Pixel-based Motion Detection)
+✅ Tested: Working correctly
+✅ Deployed: Ready for outdoor use
+
+⚙️  Current Configuration:
+   - Check interval: 15 seconds
+   - Motion threshold: 2000 pixels
+   - Pixel difference: 30 brightness units
+   - Cooldown: 60 seconds
+   - AI Model: Claude 3.5 Haiku
+   - Monthly cost: ~$2-3
+
+--------------------------------------------------------------------------------
+  NEXT STEPS
+--------------------------------------------------------------------------------
+
+1. Restart AppDaemon (if you just updated files)
+2. Point camera at outdoor driveway
+3. Monitor logs for first detection
+4. Tune sensitivity based on false positive rate
+5. Create Home Assistant automations
+
+--------------------------------------------------------------------------------
+  DIRECTORY CLEANUP COMPLETED
+--------------------------------------------------------------------------------
+
+✅ Old files archived to: camera-motion-detector-ARCHIVE-2026-01-01/
+✅ Test files removed
+✅ Only production files remain
+✅ Documentation organized
+✅ Ready for deployment
+
+--------------------------------------------------------------------------------
+  SUPPORT
+--------------------------------------------------------------------------------
+
+All documentation is included in this directory.
+
+Need help? Start with:
+1. README.md - General questions
+2. DEPLOYMENT_GUIDE.md - Setup questions
+3. docs/TROUBLESHOOTING.md - Error messages
+
+--------------------------------------------------------------------------------
+  SYSTEM REQUIREMENTS
+--------------------------------------------------------------------------------
+
+✓ Home Assistant OS with AppDaemon add-on
+✓ RTSP camera (Wyze, Reolink, etc.)
+✓ Anthropic API key
+✓ MQTT broker (Mosquitto)
+✓ Python packages: anthropic, Pillow, numpy, requests
+✓ System package: ffmpeg
+
+================================================================================
+
+Ready to deploy? Open DEPLOYMENT_GUIDE.md and follow the steps!
+
+================================================================================

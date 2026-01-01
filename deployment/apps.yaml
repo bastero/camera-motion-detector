@@ -1,0 +1,65 @@
+alexa_talking_clock:
+  module: alexa_talking_clock
+  class: AlexaTalkingClock
+  alexas:
+    - media_player.juan_s_echo_pop
+    - media_player.office_echo_dot
+  announcements:
+    bell: true  # for SONOS, set to False
+    start_time: "09:00:00"
+    end_time: "22:00:00"
+    half_hour: false
+    quarter_hour: false
+    default_speech: "It's {time}." # {day} {date} and {time} can be used. Can be defined in your local language
+  voice: # for SONOS, remove this section
+    volume_offset: 0 # -40 to 4, default 0
+    pitch_offset: 0 # -33 to 50, default 0
+    rate: 100 # 20 to 250, default 100
+    whisper: false
+  reminders:
+  #      # frequency options: daily, weekdays, weekends, mon, tue, wed, thu, fri, sat, sun
+  #      # IMPORTANT NOTE: ensure you set the reminder times to trigger at the announcement times only. See below for more details. 
+  #      #   if you set a reminder at 08:15:00, or 08:45:00 it will only trigger if the announcements > quarter_hour is set to true, else it will get ignored.
+  #      #   if you set a reminder at 08:30:00, it will only trigger if the announcements > half_hour is set to true, else it will get ignored.
+    # daily
+    - schedule: "daily, 09:00:00" 
+      reminder: "Good morning. Today is {day}, {date}, and it's {time}."
+    - schedule: "daily, 12:00:00"
+      reminder: "Good afternoon. Today is {day}, {date}, and it's {time}."
+    - schedule: "daily, 17:00:00"
+      reminder: "Good evening. It's {time}."
+    - schedule: "daily, 21:30:00"
+      reminder: "It's {time}. Good night. And sweet dreams."
+  debug: false
+
+
+ #AppDaemon Configuration for Camera Motion Detection with Frigate
+# Place this file in: /addon_configs/a0d7b954_appdaemon/apps/apps.yaml
+
+camera_detection:
+  module: camera_detection.camera_detection_pixel
+  class: CameraMotionDetection
+
+  # RTSP URL for snapshots
+  snapshot_url: "rtsp://wyzecam1:garby111@192.168.1.206/live"
+
+  # Check for motion every X seconds (outdoor: 15s is good balance)
+  check_interval: 15
+
+  # Pixel-based motion detection - optimized for outdoor driveway monitoring
+  # Number of pixels that must change to trigger detection (out of 76,800 total pixels)
+  # 2000 pixels = ~2.6% of image - perfect for detecting people/vehicles
+  motion_pixel_threshold: 2000
+
+  # How much a pixel must change (0-255 brightness scale) to count as changed
+  # 30 is good for outdoor - filters out shadows/clouds but catches real movement
+  pixel_difference_threshold: 30
+
+  # Anthropic API key
+  anthropic_api_key: "YOUR_ANTHROPIC_API_KEY_HERE"
+
+  # MQTT topic prefix
+  mqtt_topic_prefix: "camera_detection"
+
+  # Cooldown between AI analyses in seconds (prevents repeated alerts for same event)
+  cooldown_seconds: 60

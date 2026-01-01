@@ -1,0 +1,44 @@
+# Secrets
+*.env
+**/secrets.yaml
+*anthropic_api_key*
+*password*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+motion_env*/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+test_*.py
+*_test.py
+diagnostic_*.py
+
+# Temporary
+tmp/
+temp/
+*.tmp
+*.bak
+*.log
